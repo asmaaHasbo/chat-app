@@ -42,11 +42,10 @@ class WhatsApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes:  {
-        // SplashScreen.id: (context) => SplashScreen(),
-        // LoginScreen.id: (context) => const LoginScreen(),
+        SplashScreen.id: (context) => SplashScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
       },
-      // initialRoute: SplashScreen.id,
-      home: Text('hello'),
+      initialRoute: SplashScreen.id,
     );
   }
 }
