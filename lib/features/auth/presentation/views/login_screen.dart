@@ -10,7 +10,12 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  const Scaffold(
-      body:Text('start')
+      body:Column(
+        children: [
+          Text('ss')
+        ],
+      )
+
     ) ;
   }
 }
