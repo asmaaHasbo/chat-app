@@ -24,19 +24,23 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hint,
         labelText: label,
-        labelStyle: const TextStyle(fontSize: 18),
+        labelStyle: const TextStyle(fontSize: 16),
+
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(color: AppColors.secondaryColor,),
         ),
+
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
           borderSide: const BorderSide(color: Colors.black12 , width: 2),
         ),
+
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
           borderSide: const BorderSide(color: Color(0xff34B7F1) ,width: 2),
         ),
+
         prefixIcon: Icon(prefixIcon , color: Colors.black54,),
         suffixIcon: Icon( suffixIcon,color:Colors.black54 ,)
       ),
