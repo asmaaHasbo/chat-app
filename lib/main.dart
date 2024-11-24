@@ -44,8 +44,8 @@ class WhatsApp extends StatelessWidget {
       ),
       routes:  {
         SplashScreen.id: (context) => SplashScreen(),
-        LoginScreen.id: (context) => const LoginScreen(),
-        RegisterScreen.id : (context) => const RegisterScreen()
+        LoginScreen.id: (context) =>  LoginScreen(),
+        RegisterScreen.id : (context) =>  RegisterScreen()
       },
       initialRoute: SplashScreen.id,
     );
