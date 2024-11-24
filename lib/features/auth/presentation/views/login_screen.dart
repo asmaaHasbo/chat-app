@@ -9,8 +9,8 @@ class LoginScreen extends StatelessWidget {
   static String id = "LoginScreen";
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
-      body:Text('start')
-    ) ;
+    return const SafeArea(
+      child: Scaffold(body: Text('start'),),
+    );
   }
 }

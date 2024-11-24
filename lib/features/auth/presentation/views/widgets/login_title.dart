@@ -1,3 +1,4 @@
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/cupertino.dart';
 
 class LoginTitle extends StatelessWidget {
@@ -5,6 +6,8 @@ class LoginTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return  Text('Log in to your account' ,
+    style:Styles.textStyle22,
+    );
   }
 }
