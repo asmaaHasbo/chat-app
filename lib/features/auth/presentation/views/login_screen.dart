@@ -56,7 +56,10 @@ class LoginScreen extends StatelessWidget {
 
               //----------------
               CustomRow(quText: "Don’t have an account?",
-                  linkedText: "Register here", onPressed: () {  },)
+                  linkedText: "Register Now", onPressed: () {
+
+                Navigator.pushNamed(context, )
+                },)
             ],
           ),
         ),
