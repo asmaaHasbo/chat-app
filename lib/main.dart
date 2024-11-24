@@ -1,3 +1,4 @@
+import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,7 @@ class WhatsApp extends StatelessWidget {
       routes:  {
         SplashScreen.id: (context) => SplashScreen(),
         LoginScreen.id: (context) => const LoginScreen(),
+        RegisterScreen.id : (context) => const RegisterScreen()
       },
       initialRoute: SplashScreen.id,
     );

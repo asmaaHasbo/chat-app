@@ -19,19 +19,19 @@ class SplashScreen extends StatelessWidget {
         child: Container(
           width: double.infinity,
           decoration: backgroundImg(),
-          child: const Expanded(
+          child: Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 Logo(),
-                WelcomeText(),
-                SizedBox(
+                const WelcomeText(),
+                const SizedBox(
                   height: 170,
                 ),
-                DescriptionText(),
+                const DescriptionText(),
               ],
             ),
           ),

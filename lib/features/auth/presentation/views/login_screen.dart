@@ -1,9 +1,8 @@
-import 'package:chat_app/core/constants/assests_images.dart';
 import 'package:chat_app/core/shared_widgets/custom_button.dart';
 import 'package:chat_app/core/shared_widgets/custom_text_field.dart';
+import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_title.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/shared_widgets/logo.dart';
@@ -18,10 +17,10 @@ class LoginScreen extends StatelessWidget {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Column(
+          child: ListView(
             children: [
-              const Logo(),
-              const LoginTitle(),
+             Logo(height: 200,),
+               CustomTitle(title: 'Login',),
               const SizedBox(
                 height: 20,
               ),
@@ -58,7 +57,7 @@ class LoginScreen extends StatelessWidget {
               CustomRow(quText: "Don’t have an account?",
                   linkedText: "Register Now", onPressed: () {
 
-                Navigator.pushNamed(context, )
+                Navigator.pushNamed(context, RegisterScreen.id);
                 },)
             ],
           ),
