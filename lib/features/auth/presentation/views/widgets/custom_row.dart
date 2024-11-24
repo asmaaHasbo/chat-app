@@ -19,13 +19,13 @@ class CustomRow extends StatelessWidget {
       children: [
         Text(
           quText,
-          style: const TextStyle(fontSize: 14),
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         ),
         TextButton(
           onPressed: onPressed,
           child: Text(
             linkedText,
-            style: TextStyle(fontSize: 14, color: AppColors.mainColor),
+            style: TextStyle(fontSize: 14, color: AppColors.mainColor , fontWeight: FontWeight.bold),
           ),
         ),
       ],
