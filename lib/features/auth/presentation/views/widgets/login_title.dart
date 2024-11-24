@@ -6,8 +6,10 @@ class LoginTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Text('Log in to your account' ,
-    style:Styles.textStyle22,
+    return  Center(
+      child: Text('Log in to your account' ,
+      style:Styles.textStyle22,
+      ),
     );
   }
 }
