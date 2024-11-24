@@ -8,7 +8,7 @@ class LoginTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Center(
       child: Text('Log in to your account' ,
-      style:Styles.textStyle22,
+      style:Styles.textStyle22.copyWith(fontSize: 26),
       ),
     );
   }

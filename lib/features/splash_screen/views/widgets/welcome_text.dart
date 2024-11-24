@@ -9,7 +9,7 @@ class WelcomeText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'WhatsUp',
-      style: Styles.textStyle45,
+      style: Styles.textStyle30,
     );
   }
 }
