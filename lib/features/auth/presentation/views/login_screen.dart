@@ -3,6 +3,7 @@ import 'package:chat_app/core/shared_widgets/custom_text_field.dart';
 import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/cerate_email_pass_fun.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/login_in_function.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_title.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -83,9 +84,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       if(formKey.currentState!.validate()) {
                         isLoading = true ;
                         setState(() {
-
                         });
-                        createEmailPassFun(context, email, password);
+                   loginInFunction(context, email, password);
                         isLoading = false ;
                         setState(() {
 
