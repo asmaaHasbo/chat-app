@@ -5,27 +5,37 @@ class CustomTextField extends StatelessWidget {
   CustomTextField({
     super.key,
     required this.onChange,
+     this.validation,
     required this.hint,
     required this.label,
+    required this.type,
     required this.prefixIcon,
     this.suffixIcon
   });
 
   Function(String) onChange;
+  Function(String) ?validation ;
   String hint;
   String label ;
+  TextInputType type ;
   IconData prefixIcon ;
   IconData ? suffixIcon ;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       onChanged: onChange,
+      validator: (value){
+        if(value!.isEmpty){
+          return "Field is required";
+        }
+        validation;
+      } ,
+      keyboardType: type,
       decoration: InputDecoration(
         hintText: hint,
         labelText: label,
         labelStyle: const TextStyle(fontSize: 16),
-
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(color: AppColors.secondaryColor,),

@@ -18,7 +18,7 @@ class RegisterScreen extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: ListView(
             children: [
-              Logo(height: 200,),
+              Logo(height: 150,),
               CustomTitle(
                 title: 'Register',
               ),
@@ -29,6 +29,7 @@ class RegisterScreen extends StatelessWidget {
               //----------------------- name ---------------
               CustomTextField(
                 onChange: (String) {},
+                type: TextInputType.name,
                 hint: 'enter your Name',
                 label: 'enter your Name',
                 prefixIcon: Icons.person,
@@ -40,6 +41,7 @@ class RegisterScreen extends StatelessWidget {
               //------------------------ email -----------------
               CustomTextField(
                 onChange: (String) {},
+                type: TextInputType.emailAddress,
                 hint: 'enter your email',
                 label: 'enter your email',
                 prefixIcon: Icons.email,
@@ -51,6 +53,7 @@ class RegisterScreen extends StatelessWidget {
               //----------------------- phone ---------------
               CustomTextField(
                 onChange: (String) {},
+                type: TextInputType.number,
                 hint: 'enter your phone',
                 label: 'enter your phone',
                 prefixIcon: Icons.phone_android_outlined,
@@ -62,6 +65,7 @@ class RegisterScreen extends StatelessWidget {
               //------------------------ password -------------
               CustomTextField(
                 onChange: (String) {},
+                type: TextInputType.visiblePassword,
                 hint: 'enter your password',
                 label: 'enter your password',
                 prefixIcon: Icons.lock,
