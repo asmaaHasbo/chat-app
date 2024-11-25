@@ -11,7 +11,7 @@ createEmailPassFun(context , email , password ) async{
       password: password!,
     );
     ScaffoldMessenger.of(context).showSnackBar(
-      snackBar(msg: 'success', color: Colors.green),
+      snackBar(msg: 'success', color: Colors.green ,),
     );
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
