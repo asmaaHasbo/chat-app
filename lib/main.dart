@@ -27,11 +27,11 @@ void main() async{
     Firebase.initializeApp();
   }
 
-  runApp(WhatsApp());
+  runApp(const ChatApp());
 }
 
-class WhatsApp extends StatelessWidget {
-  const WhatsApp({Key? key}) : super(key: key);
+class ChatApp extends StatelessWidget {
+  const ChatApp({super.key});
 
   @override
   Widget build(BuildContext context) {

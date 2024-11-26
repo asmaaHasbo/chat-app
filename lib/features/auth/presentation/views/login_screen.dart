@@ -1,13 +1,17 @@
 import 'package:chat_app/core/shared_widgets/custom_button.dart';
-import 'package:chat_app/core/shared_widgets/custom_text_field.dart';
+import 'package:chat_app/core/shared_widgets/custom_text_form_field.dart';
 import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/cerate_email_pass_fun.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/email_field.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_in_function.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_title.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/password_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../core/shared_widgets/logo.dart';
+import '../../../../core/shared_widgets/snack_bar.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
@@ -24,15 +28,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
   GlobalKey<FormState> formKey = GlobalKey();
 
-  bool isLoading =false ;
+  bool isLoading = false;
+  bool isObscured = false;
+  bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: ModalProgressHUD(
-        inAsyncCall: isLoading ,
-        progressIndicator: CircularProgressIndicator(color: Colors.red,),
-
+        inAsyncCall: isLoading,
+        progressIndicator: const CircularProgressIndicator(
+          color: Colors.red,
+        ),
         child: Scaffold(
           body: Padding(
             padding: const EdgeInsets.all(10.0),
@@ -40,16 +47,9 @@ class _LoginScreenState extends State<LoginScreen> {
               key: formKey,
               child: ListView(
                 children: [
-                  Logo(
-                    height: 150,
-                  ),
-                  CustomTitle(
-                    title: 'Login',
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  //------------------------ email -----------------
+                  Logo(height: 150),
+                  CustomTitle(title: 'Login'),
+                  const SizedBox(height: 20),
                   CustomTextField(
                     onChange: (value) {
                       email = value;
@@ -59,11 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     label: 'enter your email',
                     prefixIcon: Icons.email,
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-
-                  //------------------------ password -------------
+                  const SizedBox(height: 20),
                   CustomTextField(
                     onChange: (value) {
                       password = value;
@@ -72,24 +68,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     hint: 'enter your password',
                     label: 'enter your password',
                     prefixIcon: Icons.lock,
-                    suffixIcon: Icons.remove_red_eye,
+                    suffixIconPress: () {
+                      isVisible = !isVisible;
+                      setState(() {});
+                    },
+                    suffixIcon: isVisible
+                        ? Icons.visibility_outlined
+                        : Icons.visibility_off_outlined,
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-
-                  //---------------------- button--------------
+                  const SizedBox(height: 20),
                   CustomButton(
                     onPressed: () async {
-                      if(formKey.currentState!.validate()) {
-                        isLoading = true ;
-                        setState(() {
-                        });
-                   loginInFunction(context, email, password);
-                        isLoading = false ;
-                        setState(() {
-
-                        });
+                      if (formKey.currentState!.validate()) {
+                        isLoading = true;
+                        setState(() {});
+                        loginInFunction(context, email, password);
+                        isLoading = false;
+                        setState(() {});
                       }
                     },
                     buttName: 'Login',
@@ -97,8 +92,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-
-                  //----------------
                   CustomRow(
                     quText: "Don’t have an account?",
                     linkedText: "Register Now",

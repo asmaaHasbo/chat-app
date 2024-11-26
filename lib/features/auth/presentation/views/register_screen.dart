@@ -1,11 +1,16 @@
+import 'package:chat_app/features/auth/presentation/views/widgets/auth_button.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/cerate_email_pass_fun.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/email_field.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_title.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/password_field.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/phone_field.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/user_name_field.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../../core/shared_widgets/custom_button.dart';
-import '../../../../core/shared_widgets/custom_text_field.dart';
+import '../../../../core/shared_widgets/custom_text_form_field.dart';
 import '../../../../core/shared_widgets/logo.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -17,13 +22,14 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
- GlobalKey<FormState> formKey = GlobalKey();
+  GlobalKey<FormState> formKey = GlobalKey();
 
-  String ? email ;
+  String? email;
 
-  String ? password ;
+  String? password;
 
-  bool isLoading = false ;
+  bool isLoading = false;
+  bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,29 +43,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
               key: formKey,
               child: ListView(
                 children: [
-                  Logo(
-                    height: 150,
-                  ),
-                  CustomTitle(
-                    title: 'Register',
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  Logo(height: 150),
 
-                  //----------------------- name ---------------
-                  CustomTextField(
-                    onChange: (String) {},
-                    type: TextInputType.name,
-                    hint: 'enter your Name',
-                    label: 'enter your Name',
-                    prefixIcon: Icons.person,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  CustomTitle(title: 'Register'),
+                  const SizedBox(height: 20),
 
-                  //------------------------ email -----------------
+                  const UserNameField(),
+                  const SizedBox(height: 20),
+
                   CustomTextField(
                     onChange: (value) {
                       email = value;
@@ -69,23 +60,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     label: 'enter your email',
                     prefixIcon: Icons.email,
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
 
-                  //----------------------- phone ---------------
-                  CustomTextField(
-                    onChange: (String) {},
-                    type: TextInputType.number,
-                    hint: 'enter your phone',
-                    label: 'enter your phone',
-                    prefixIcon: Icons.phone_android_outlined,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const PhoneField(),
+                  const SizedBox(height: 20),
 
-                  //------------------------ password -------------
                   CustomTextField(
                     onChange: (value) {
                       password = value;
@@ -94,33 +73,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     hint: 'enter your password',
                     label: 'enter your password',
                     prefixIcon: Icons.lock,
-                    suffixIcon: Icons.remove_red_eye,
+                    suffixIconPress: () {
+                      isVisible = !isVisible;
+                      setState(() {});
+                    },
+                    suffixIcon: isVisible
+                        ? Icons.visibility_outlined
+                        : Icons.visibility_off_outlined,
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
 
-                  //---------------------- button--------------
                   CustomButton(
                     onPressed: () {
-                      if(formKey.currentState!.validate()){
+                      if (formKey.currentState!.validate()) {
                         isLoading = true;
-                        setState(() {
-
-                        });
+                        setState(() {});
                         createEmailPassFun(context, email, password);
                         isLoading = false;
-                        setState(() {
-
-                        });
+                        setState(() {});
                       }
-
                     },
                     buttName: 'Register',
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
 
                   //----------------
                   CustomRow(

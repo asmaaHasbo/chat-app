@@ -5,32 +5,39 @@ class CustomTextField extends StatelessWidget {
   CustomTextField({
     super.key,
     required this.onChange,
-     this.validation,
     required this.hint,
     required this.label,
     required this.type,
     required this.prefixIcon,
-    this.suffixIcon
-  });
+    this.suffixIcon,
+    this.suffixIconPress,
+  }  );
 
   Function(String) onChange;
-  Function(String) ?validation ;
   String hint;
-  String label ;
-  TextInputType type ;
-  IconData prefixIcon ;
-  IconData ? suffixIcon ;
+  String label;
+  TextInputType type;
+  IconData prefixIcon;
+  IconData? suffixIcon;
+  VoidCallback? suffixIconPress;
+
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: onChange,
-      validator: (value){
-        if(value!.isEmpty){
+      validator: (value) {
+        if (value!.isEmpty) {
           return "Field is required";
         }
-        validation;
-      } ,
+
+        // if(type == TextInputType.visiblePassword){
+        //   if(value.length < 9 ){
+        //     return "password must be 9 num";
+        //   }
+        // }
+
+      },
       keyboardType: type,
       decoration: InputDecoration(
         hintText: hint,
@@ -38,21 +45,29 @@ class CustomTextField extends StatelessWidget {
         labelStyle: const TextStyle(fontSize: 16),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: AppColors.secondaryColor,),
+          borderSide: BorderSide(
+            color: AppColors.secondaryColor,
+          ),
         ),
-
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
-          borderSide: const BorderSide(color: Colors.black12 , width: 2),
+          borderSide: const BorderSide(color: Colors.black12, width: 2),
         ),
-
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: const BorderSide(color: Color(0xff34B7F1) ,width: 2),
+          borderSide: const BorderSide(color: Color(0xff34B7F1), width: 2),
         ),
 
-        prefixIcon: Icon(prefixIcon , color: Colors.black54,),
-        suffixIcon: Icon( suffixIcon,color:Colors.black54 ,)
+        prefixIcon: Icon(
+          prefixIcon,
+          color: Colors.black54,
+        ),
+
+        suffixIcon: IconButton(
+          onPressed:suffixIconPress,
+          icon:Icon(suffixIcon)   ,
+        ),
+
       ),
     );
   }

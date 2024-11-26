@@ -3,7 +3,7 @@ import '../constants/assests_images.dart';
 
 backgroundImg() => const BoxDecoration(
     image: DecorationImage(
-        image: AssetImage(splashBackground),
+        image: AssetImage("assets/images/test1.jpg"),
         fit: BoxFit.fill
     ),
   );
