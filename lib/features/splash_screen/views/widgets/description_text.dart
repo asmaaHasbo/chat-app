@@ -8,7 +8,7 @@ class DescriptionText extends StatelessWidget {
   Widget build(BuildContext context) {
    return Text(
       'The best chat app in this century',
-      style: Styles.textStyle22,
+      style: Styles.textStyle18,
     );
   }
 }

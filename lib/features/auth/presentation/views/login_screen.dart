@@ -47,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
               key: formKey,
               child: ListView(
                 children: [
+                  const SizedBox(height: 70),
                   Logo(height: 150),
                   CustomTitle(title: 'Login'),
                   const SizedBox(height: 20),
@@ -89,9 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     buttName: 'Login',
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+
                   CustomRow(
                     quText: "Don’t have an account?",
                     linkedText: "Register Now",

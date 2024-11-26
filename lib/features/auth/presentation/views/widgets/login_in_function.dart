@@ -1,3 +1,4 @@
+import 'package:chat_app/features/chats/home_chat_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ loginInFunction(context, email, password ) async {
         color: Colors.green,
       ),
     );
+    Navigator.popAndPushNamed(context, HomeChatScreen.id);
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
       ScaffoldMessenger.of(context).showSnackBar(

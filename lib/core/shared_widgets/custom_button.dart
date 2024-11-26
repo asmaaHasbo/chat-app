@@ -17,13 +17,13 @@ class CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.mainColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
-        minimumSize: const Size(double.infinity, 55),
+        minimumSize: const Size(double.infinity, 50),
       ),
       child: Text(
         buttName,
-        style: const TextStyle(fontSize: 21, color: Colors.white),
+        style: const TextStyle(fontSize: 21,fontWeight: FontWeight.bold ,color: Colors.white),
       ),
     );
   }

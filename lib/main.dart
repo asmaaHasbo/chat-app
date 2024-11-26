@@ -1,4 +1,5 @@
 import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
+import 'package:chat_app/features/chats/home_chat_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,6 @@ void main() async{
 
 class ChatApp extends StatelessWidget {
   const ChatApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
@@ -45,7 +45,8 @@ class ChatApp extends StatelessWidget {
       routes:  {
         SplashScreen.id: (context) => SplashScreen(),
         LoginScreen.id: (context) =>  LoginScreen(),
-        RegisterScreen.id : (context) =>  RegisterScreen()
+        RegisterScreen.id : (context) =>  RegisterScreen(),
+        HomeChatScreen.id : (context)=> HomeChatScreen(),
       },
       initialRoute: SplashScreen.id,
     );

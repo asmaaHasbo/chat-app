@@ -8,7 +8,7 @@ class CustomTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Text(title ,
 
-    style:Styles.textStyle22.copyWith(fontSize: 26 ),
+    style:Styles.textStyle18.copyWith(fontSize: 26 ),
     );
   }
 }
