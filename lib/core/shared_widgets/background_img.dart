@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import '../constants/assests_images.dart';
 
-backgroundImg() => const BoxDecoration(
+backgroundImg(  ) =>
+   const BoxDecoration(
     image: DecorationImage(
-        image: AssetImage("assets/images/test1.jpg"),
+        image: AssetImage("assets/images/splash-background.jpg"),
         fit: BoxFit.fill
     ),
   );

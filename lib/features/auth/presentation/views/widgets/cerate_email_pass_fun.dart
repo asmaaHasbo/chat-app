@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/shared_widgets/snack_bar.dart';
-import '../../../../chats/home_chat_screen.dart';
+import '../../../../chats/home_chat_page.dart';
 
 createEmailPassFun(context , email , password ) async{
   try {
@@ -14,7 +14,7 @@ createEmailPassFun(context , email , password ) async{
     ScaffoldMessenger.of(context).showSnackBar(
       snackBar(msg: 'success', color: Colors.green ,),
     );
-    Navigator.popAndPushNamed(context, HomeChatScreen.id);
+    Navigator.popAndPushNamed(context, HomeChatPage.id);
 
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {

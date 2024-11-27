@@ -1,5 +1,6 @@
 import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
-import 'package:chat_app/features/chats/home_chat_screen.dart';
+import 'package:chat_app/features/chats/home_chat_page.dart';
+import 'package:chat_app/features/chats/messages_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,8 @@ class ChatApp extends StatelessWidget {
         SplashScreen.id: (context) => SplashScreen(),
         LoginScreen.id: (context) =>  LoginScreen(),
         RegisterScreen.id : (context) =>  RegisterScreen(),
-        HomeChatScreen.id : (context)=> HomeChatScreen(),
+        HomeChatPage.id : (context)=> const HomeChatPage(),
+        MessagePage.id : (context)=> const MessagePage()
       },
       initialRoute: SplashScreen.id,
     );

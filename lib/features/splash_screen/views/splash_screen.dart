@@ -1,3 +1,4 @@
+import 'package:chat_app/core/constants/assests_images.dart';
 import 'package:chat_app/features/splash_screen/views/widgets/description_text.dart';
 import 'package:chat_app/features/splash_screen/views/widgets/welcome_text.dart';
 import 'package:flutter/material.dart';
