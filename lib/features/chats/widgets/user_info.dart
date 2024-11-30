@@ -1,21 +1,25 @@
+import 'package:chat_app/features/auth/presentation/view_model/user_module.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/themes/colors.dart';
 class UserInfo extends StatelessWidget {
-  const UserInfo({Key? key}) : super(key: key);
+  UserInfo({super.key});
+
+  UserModule ? userModule = UserModule(name: 'dd', phone: '1029', email:'x');
+
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Asmaa',
-          style: TextStyle(
+        Text(
+          userModule!.name,
+          style: const TextStyle(
               fontWeight: FontWeight.bold, fontSize: 20),
         ),
         Text(
-          '010299037',
+          userModule!.phone,
           style: TextStyle(
               fontSize: 18, color: AppColors.secondaryColor),
         )

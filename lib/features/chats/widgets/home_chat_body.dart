@@ -27,7 +27,7 @@ class HomeChatBody extends StatelessWidget {
             const SizedBox(
                 width: 20
             ),
-            const UserInfo(),
+            UserInfo(),
             const Spacer(flex: 1),
             const NumOfMsg()
           ],
