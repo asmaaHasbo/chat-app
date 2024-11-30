@@ -3,18 +3,14 @@ import 'package:chat_app/core/shared_widgets/custom_text_form_field.dart';
 import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/cerate_email_pass_fun.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/email_field.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_in_function.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_title.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/password_field.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../core/shared_widgets/logo.dart';
-import '../../../../core/shared_widgets/snack_bar.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
   static String id = "LoginScreen";
 
   @override
@@ -23,14 +19,14 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   String? email;
-
   String? password;
 
   GlobalKey<FormState> formKey = GlobalKey();
-
   bool isLoading = false;
   bool isObscured = false;
   bool isVisible = false;
+
+
 
   @override
   Widget build(BuildContext context) {

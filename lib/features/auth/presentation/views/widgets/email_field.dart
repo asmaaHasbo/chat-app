@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/shared_widgets/custom_text_form_field.dart';
-// class EmailField extends StatelessWidget {
-//    EmailField({super.key});
-//   static String ? email ;
-//   @override
-//   Widget build(BuildContext context) {
-//     return   ;
-//   }
-// }
+class EmailField extends StatelessWidget {
+   EmailField({super.key , required this.onChange});
+   Function(String) onChange ;
 
-String ? userEmail ;
-emailField(){
-  CustomTextField(
-    onChange: (value) {
-      userEmail = value;
-    },
-    type: TextInputType.emailAddress,
-    hint: 'enter your email',
-    label: 'enter your email',
-    prefixIcon: Icons.email,
-  );
+   @override
+  Widget build(BuildContext context) {
+    return  CustomTextField(
+      onChange: onChange,
+      type: TextInputType.emailAddress,
+      hint: 'enter your email',
+      label: 'enter your email',
+      prefixIcon: Icons.email,
+    )  ;
+  }
 }
+

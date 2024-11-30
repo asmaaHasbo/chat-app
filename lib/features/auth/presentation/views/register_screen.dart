@@ -1,3 +1,4 @@
+import 'package:chat_app/features/auth/presentation/views/widgets/add_users_to_collection.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/auth_button.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/cerate_email_pass_fun.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dart';
@@ -24,8 +25,9 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   GlobalKey<FormState> formKey = GlobalKey();
 
+  String ? name ;
   String? email;
-
+  String ? phone;
   String? password;
 
   bool isLoading = false;
@@ -48,7 +50,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   CustomTitle(title: 'Register'),
                   const SizedBox(height: 20),
 
-                  const UserNameField(),
+                   UserNameField(onChange: (value) { name = value ;},),
                   const SizedBox(height: 20),
 
                   CustomTextField(
@@ -62,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const SizedBox(height: 20),
 
-                  const PhoneField(),
+                 PhoneField(onChange: (value){ phone = value ;},),
                   const SizedBox(height: 20),
 
                   CustomTextField(
@@ -88,7 +90,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       if (formKey.currentState!.validate()) {
                         isLoading = true;
                         setState(() {});
-                        createEmailPassFun(context, email, password);
+                        createEmailPassFun(context, name , phone ,email, password );
+                        setState(() {
+                        });
                         isLoading = false;
                         setState(() {});
                       }
