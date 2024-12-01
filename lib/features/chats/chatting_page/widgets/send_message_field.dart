@@ -1,9 +1,10 @@
-import 'package:chat_app/features/chats/widgets/circle_avater_icon.dart';
+import 'package:chat_app/features/firebase/add_message_to_db.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/themes/colors.dart';
+import '../../../../core/themes/colors.dart';
+import '../../../../core/shared_widgets/circle_avater_icon.dart';
 
 class SendMessageField extends StatelessWidget {
   SendMessageField({
@@ -11,8 +12,6 @@ class SendMessageField extends StatelessWidget {
   });
 
   TextEditingController controller = TextEditingController();
-  CollectionReference messages =
-      FirebaseFirestore.instance.collection('messages');
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +24,7 @@ class SendMessageField extends StatelessWidget {
             child: TextField(
               controller: controller,
               onSubmitted: (value) {
-                messages.add({
-                  'message': value,
-                });
-                print(value);
+               addMessage(message: value);
                 controller.clear();
               },
               decoration: InputDecoration(

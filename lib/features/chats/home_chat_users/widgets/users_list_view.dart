@@ -1,6 +1,7 @@
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
-import 'package:chat_app/features/chats/widgets/home_chat_body.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'home_chat_body.dart';
 
 class UsersListView extends StatelessWidget {
    UsersListView({

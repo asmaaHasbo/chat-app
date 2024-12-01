@@ -1,4 +1,4 @@
-import 'package:chat_app/features/chats/home_chat_page.dart';
+import 'package:chat_app/features/chats/home_chat_users/home_chat_users.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -25,5 +25,8 @@ loginInFunction(context, email, password ) async {
       ScaffoldMessenger.of(context).showSnackBar(snackBar(
           msg: 'Wrong password provided for that user.', color: Colors.red));
     }
+  }
+  catch(e){
+    print(e.toString());
   }
 }

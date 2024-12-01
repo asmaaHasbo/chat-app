@@ -1,13 +1,12 @@
 import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
-import 'package:chat_app/features/chats/home_chat_page.dart';
-import 'package:chat_app/features/chats/messages_page.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:chat_app/features/chats/home_chat_users/home_chat_users.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'core/themes/colors.dart';
 import 'features/auth/presentation/views/login_screen.dart';
+import 'features/chats/chatting_page/chatting_page.dart';
 import 'features/splash_screen/views/splash_screen.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,10 +44,10 @@ class ChatApp extends StatelessWidget {
       ),
       routes:  {
         SplashScreen.id: (context) => SplashScreen(),
-        LoginScreen.id: (context) =>  LoginScreen(),
-        RegisterScreen.id : (context) =>  RegisterScreen(),
+        LoginScreen.id: (context) =>  const LoginScreen(),
+        RegisterScreen.id : (context) =>  const RegisterScreen(),
         HomeChatPage.id : (context)=> const HomeChatPage(),
-        MessagePage.id : (context)=> const MessagePage()
+        ChattingPage.id : (context)=>  const ChattingPage()
       },
       initialRoute: SplashScreen.id,
     );

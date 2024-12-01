@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../core/themes/styles.dart';
 import '../../firebase/get_messages_from_db.dart';
 
-class ChatingPage extends StatelessWidget {
-  const ChatingPage({super.key});
+class ChattingPage extends StatelessWidget {
+  const ChattingPage({super.key});
   static String id = "MessagesScreen";
 
   @override

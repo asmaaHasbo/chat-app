@@ -1,7 +1,7 @@
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/themes/colors.dart';
+import '../../../../core/themes/colors.dart';
 class UserInfo extends StatelessWidget {
   UserInfo({super.key , required this.userModule });
 

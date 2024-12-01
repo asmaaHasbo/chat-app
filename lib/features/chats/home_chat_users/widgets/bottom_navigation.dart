@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/themes/colors.dart';
+import '../../../../core/themes/colors.dart';
 class BottomNavigation extends StatelessWidget {
   const BottomNavigation({Key? key}) : super(key: key);
 

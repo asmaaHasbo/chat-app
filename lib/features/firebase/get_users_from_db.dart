@@ -1,31 +1,35 @@
+import 'package:chat_app/core/themes/colors.dart';
+import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../../core/shared_widgets/center_circular_indicator.dart';
+import '../chats/home_chat_users/widgets/users_list_view.dart';
 
 class GetUsersFromDb extends StatelessWidget {
   GetUsersFromDb({super.key});
-
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<DocumentSnapshot>(
-        future: users.doc('24nNHaVGRc9ELE8jnXp7').get() ,
-        builder: (context , snapshot){
-          if(snapshot.hasError){
+    return StreamBuilder<QuerySnapshot>(
+        stream: users.where('owner', isEqualTo: false ).snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List<UserModule> userModuleList = [];
+            List<QueryDocumentSnapshot> data = snapshot.data!.docs;
+            for (int i = 0; i < data.length; i++) {
+              userModuleList.add(UserModule.fromJson(snapshot.data!.docs[i]));
+            }
+            return UsersListView(
+              userModule: userModuleList,
+            );
+          } else if (snapshot.hasError) {
             return const Text('error');
           }
-          else if(snapshot.hasData){
-            Map<String, dynamic> data = snapshot.data!.data() as  Map<String, dynamic>  ;
-            print(data['name']);
-            return Text(data['name']);
-          }
 
-            return const Text('lodad');
-
-        }
-    );
+          return const CenterCircularIndicator();
+        });
   }
 }
-
-
-

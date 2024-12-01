@@ -1,10 +1,8 @@
-import 'package:chat_app/features/chats/widgets/bottom_navigation.dart';
-import 'package:chat_app/features/chats/widgets/users_list_view.dart';
+import 'package:chat_app/features/chats/home_chat_users/widgets/bottom_navigation.dart';
 import 'package:chat_app/features/firebase/get_users_from_db.dart';
-import 'package:chat_app/features/chats/widgets/home_chat_body.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/themes/styles.dart';
+import '../../../core/themes/styles.dart';
 
 class HomeChatPage extends StatelessWidget {
   const HomeChatPage({super.key});
@@ -38,4 +36,3 @@ class HomeChatPage extends StatelessWidget {
     );
   }
 }
-

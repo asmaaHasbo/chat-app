@@ -1,6 +1,6 @@
 import 'package:chat_app/features/auth/presentation/view_model/message_model.dart';
 import 'package:flutter/cupertino.dart';
-import '../../widgets/my_message.dart';
+import 'my_message.dart';
 
 class MessagesListView extends StatelessWidget {
   MessagesListView({super.key, required this.messageModelList});
