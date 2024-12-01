@@ -6,7 +6,7 @@ import '../../../../../core/shared_widgets/snack_bar.dart';
 
 loginInFunction(context, email, password ) async {
   try {
-    final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: email!,
       password: password,
     );

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/themes/colors.dart';
+
 class BottomNavigation extends StatelessWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  const BottomNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  BottomNavigationBar(
+    return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.chat),

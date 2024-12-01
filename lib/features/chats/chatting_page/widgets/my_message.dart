@@ -1,8 +1,6 @@
 import 'package:chat_app/core/shared_widgets/convert_timestamp_to_date_time.dart';
 import 'package:chat_app/features/auth/presentation/view_model/message_model.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import '../../../../core/themes/colors.dart';
 
 class MyMessage extends StatelessWidget {

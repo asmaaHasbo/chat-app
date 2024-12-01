@@ -19,12 +19,8 @@ class GetMessagesFromDB extends StatelessWidget {
         if (snapshot.hasData) {
           List<MessageModel> messageModelList = [];
           for (var i = 0; i < snapshot.data!.docs.length; i++) {
-            messageModelList
-                .add(MessageModel.fromJson(snapshot.data!.docs[i]));
-
+            messageModelList.add(MessageModel.fromJson(snapshot.data!.docs[i]));
           }
-
-
 
           return MessagesPageBody(
             messageModelList: messageModelList,

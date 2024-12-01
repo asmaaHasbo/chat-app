@@ -7,7 +7,6 @@ import '../../../../firebase/add_users_to_db.dart';
 
 createEmailPassFun(context, name, phone, email, password) async {
   try {
-
     await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: email!,
       password: password!,
@@ -31,6 +30,6 @@ createEmailPassFun(context, name, phone, email, password) async {
           color: Colors.red));
     }
   } catch (e) {
-    print('this is an error' + e.toString());
+    print('this is an error$e');
   }
 }

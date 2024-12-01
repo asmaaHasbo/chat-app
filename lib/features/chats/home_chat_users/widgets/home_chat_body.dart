@@ -8,9 +8,10 @@ import '../../../../core/shared_widgets/circle_avater_icon.dart';
 import 'num_of_msg.dart';
 
 class HomeChatBody extends StatelessWidget {
-  HomeChatBody({super.key , required this.userModule});
+  HomeChatBody({super.key, required this.userModule});
+
+  UserModule userModule;
   @override
-  UserModule userModule ;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
@@ -27,7 +28,9 @@ class HomeChatBody extends StatelessWidget {
               radius: 30,
             ),
             const SizedBox(width: 20),
-            UserInfo(userModule: userModule,),
+            UserInfo(
+              userModule: userModule,
+            ),
             const Spacer(flex: 1),
             const NumOfMsg()
           ],

@@ -8,7 +8,7 @@ import '../../../core/shared_widgets/delayed_function.dart';
 import '../../../core/shared_widgets/logo.dart';
 
 class SplashScreen extends StatelessWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   static const String id = "splashScreen";
 
@@ -41,5 +41,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-
-

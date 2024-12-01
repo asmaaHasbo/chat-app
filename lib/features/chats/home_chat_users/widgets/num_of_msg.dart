@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/themes/colors.dart';
+
 class NumOfMsg extends StatelessWidget {
-  const NumOfMsg({Key? key}) : super(key: key);
+  const NumOfMsg({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,3 @@
-import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,7 +13,7 @@ class GetUsersFromDb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-        stream: users.where('owner', isEqualTo: false ).snapshots(),
+        stream: users.where('owner', isEqualTo: false).snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<UserModule> userModuleList = [];

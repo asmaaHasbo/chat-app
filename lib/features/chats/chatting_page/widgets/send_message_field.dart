@@ -1,5 +1,4 @@
 import 'package:chat_app/features/firebase/add_message_to_db.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,7 @@ class SendMessageField extends StatelessWidget {
             child: TextField(
               controller: controller,
               onSubmitted: (value) {
-               addMessage(message: value);
+                addMessage(message: value);
                 controller.clear();
               },
               decoration: InputDecoration(

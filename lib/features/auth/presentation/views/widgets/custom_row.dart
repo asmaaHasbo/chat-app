@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 
