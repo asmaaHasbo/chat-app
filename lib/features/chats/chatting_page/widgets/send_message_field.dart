@@ -1,13 +1,18 @@
 import 'package:chat_app/features/chats/widgets/circle_avater_icon.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/themes/colors.dart';
 
 class SendMessageField extends StatelessWidget {
-  const SendMessageField({
+  SendMessageField({
     super.key,
   });
+
+  TextEditingController controller = TextEditingController();
+  CollectionReference messages =
+      FirebaseFirestore.instance.collection('messages');
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,14 @@ class SendMessageField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(top: 2.0),
             child: TextField(
+              controller: controller,
+              onSubmitted: (value) {
+                messages.add({
+                  'message': value,
+                });
+                print(value);
+                controller.clear();
+              },
               decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
@@ -35,16 +48,17 @@ class SendMessageField extends StatelessWidget {
                     borderSide: const BorderSide(color: Colors.black12),
                     borderRadius: BorderRadius.circular(40),
                   ),
-                  prefixIcon: const Icon(Icons.tag_faces_outlined , size: 27,),
+                  prefixIcon: const Icon(
+                    Icons.tag_faces_outlined,
+                    size: 27,
+                  ),
                   prefixIconColor: AppColors.secondaryColor,
                   suffixIcon: const Icon(Icons.send),
                   suffixIconColor: AppColors.secondaryColor),
             ),
           ),
         ),
-        const SizedBox(
-          width: 10,
-        ),
+        const SizedBox(width: 10),
         CircleAvaterIcon(
           icon: CupertinoIcons.mic_fill,
           radius: 25,

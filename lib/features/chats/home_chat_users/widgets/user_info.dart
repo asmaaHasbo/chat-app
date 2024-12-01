@@ -1,11 +1,11 @@
-import 'package:chat_app/features/auth/presentation/view_model/user_module.dart';
+import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/themes/colors.dart';
 class UserInfo extends StatelessWidget {
-  UserInfo({super.key});
+  UserInfo({super.key , required this.userModule });
 
-  UserModule ? userModule = UserModule(name: 'dd', phone: '1029', email:'x');
+  UserModule  userModule;
 
 
   @override

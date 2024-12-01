@@ -1,14 +1,12 @@
-import 'package:chat_app/core/shared_widgets/background_img.dart';
-import 'package:chat_app/core/themes/colors.dart';
-import 'package:chat_app/features/chats/widgets/messages_list_view.dart';
-import 'package:chat_app/features/chats/widgets/send_message_field.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/themes/styles.dart';
+import '../../../core/themes/styles.dart';
+import '../../firebase/get_messages_from_db.dart';
 
-class MessagePage extends StatelessWidget {
-  const MessagePage({super.key});
+class ChatingPage extends StatelessWidget {
+  const ChatingPage({super.key});
   static String id = "MessagesScreen";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,21 +28,12 @@ class MessagePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        decoration: backgroundImg(),
-        child: const Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              MessagesListView(),
-
-              SendMessageField(),
-            ],
-          ),
-        ),
-      ),
+      body:
+          GetMessagesFromDB(),
     );
   }
 }
+
+
 
 
