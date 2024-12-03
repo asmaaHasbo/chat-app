@@ -10,6 +10,8 @@ class MessagesPageBody extends StatelessWidget {
   MessagesPageBody({super.key, required this.messageModelList});
 
   List<MessageModel> messageModelList ;
+  final ScrollController scrollController = ScrollController() ;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,8 +20,8 @@ class MessagesPageBody extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            MessagesListView(messageModelList: messageModelList,),
-            SendMessageField(),
+            MessagesListView(messageModelList: messageModelList, scrollController: scrollController,),
+            SendMessageField(scrollController:scrollController,),
           ],
         ),
       ),

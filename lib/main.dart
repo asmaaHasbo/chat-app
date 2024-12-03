@@ -1,11 +1,12 @@
-import 'package:chat_app/features/auth/presentation/views/register_screen.dart';
+import 'package:chat_app/features/auth/presentation/views/login_page.dart';
+import 'package:chat_app/features/auth/presentation/views/register_page.dart';
 import 'package:chat_app/features/chats/home_chat_users/home_chat_users.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'core/themes/colors.dart';
-import 'features/auth/presentation/views/login_screen.dart';
+import 'features/auth/presentation/views/widgets/login_body.dart';
 import 'features/chats/chatting_page/chatting_page.dart';
 import 'features/splash_screen/views/splash_screen.dart';
 
@@ -41,8 +42,8 @@ class ChatApp extends StatelessWidget {
       ),
       routes: {
         SplashScreen.id: (context) => const SplashScreen(),
-        LoginScreen.id: (context) => const LoginScreen(),
-        RegisterScreen.id: (context) => const RegisterScreen(),
+        LoginPage.id: (context) => const LoginPage(),
+        RegisterPage.id: (context) => const RegisterPage(),
         HomeChatPage.id: (context) => const HomeChatPage(),
         ChattingPage.id: (context) => const ChattingPage()
       },

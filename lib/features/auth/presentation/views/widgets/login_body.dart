@@ -1,39 +1,39 @@
-import 'package:chat_app/features/auth/presentation/views/widgets/cerate_email_pass_fun.dart';
+import 'package:chat_app/core/shared_widgets/custom_button.dart';
+import 'package:chat_app/core/shared_widgets/custom_text_form_field.dart';
+import 'package:chat_app/features/auth/presentation/views/register_page.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/login_in_function.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_title.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/phone_field.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/user_name_field.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import '../../../../../core/shared_widgets/logo.dart';
 
-import '../../../../core/shared_widgets/custom_button.dart';
-import '../../../../core/shared_widgets/custom_text_form_field.dart';
-import '../../../../core/shared_widgets/logo.dart';
-
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
-  static String id = "RegisterScreen";
+class LoginBody extends StatefulWidget {
+  const LoginBody({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginBody> createState() => _LoginBodyState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
-  GlobalKey<FormState> formKey = GlobalKey();
-
-  String? name;
+class _LoginBodyState extends State<LoginBody> {
   String? email;
-  String? phone;
   String? password;
 
+  GlobalKey<FormState> formKey = GlobalKey();
   bool isLoading = false;
+  bool isObscured = false;
   bool isVisible = false;
+
+
 
   @override
   Widget build(BuildContext context) {
-    return ModalProgressHUD(
-      inAsyncCall: isLoading,
-      child: SafeArea(
+    return SafeArea(
+      child: ModalProgressHUD(
+        inAsyncCall: isLoading,
+        progressIndicator: const CircularProgressIndicator(
+          color: Colors.red,
+        ),
         child: Scaffold(
           body: Padding(
             padding: const EdgeInsets.all(10.0),
@@ -41,12 +41,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               key: formKey,
               child: ListView(
                 children: [
+                  const SizedBox(height: 70),
                   Logo(height: 150),
-                  CustomTitle(title: 'Register'),
-                  const SizedBox(height: 20),
-                  UserNameField(onChange: (value) {
-                    name = value;
-                  }),
+                  CustomTitle(title: 'Login'),
                   const SizedBox(height: 20),
                   CustomTextField(
                     onChange: (value) {
@@ -56,12 +53,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     hint: 'enter your email',
                     label: 'enter your email',
                     prefixIcon: Icons.email,
-                  ),
-                  const SizedBox(height: 20),
-                  PhoneField(
-                    onChange: (value) {
-                      phone = value;
-                    },
                   ),
                   const SizedBox(height: 20),
                   CustomTextField(
@@ -82,26 +73,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const SizedBox(height: 20),
                   CustomButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         isLoading = true;
                         setState(() {});
-                        createEmailPassFun(
-                            context, name, phone, email, password);
-                        setState(() {});
+                        loginInFunction(context, email, password);
                         isLoading = false;
                         setState(() {});
                       }
                     },
-                    buttName: 'Register',
+                    buttName: 'Login',
                   ),
-                  const SizedBox(height: 20),
-                  //---------------
+
                   CustomRow(
-                    quText: "Already have an account?",
-                    linkedText: "Login Now",
+                    quText: "Don’t have an account?",
+                    linkedText: "Register Now",
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pushNamed(context, RegisterPage.id);
                     },
                   )
                 ],

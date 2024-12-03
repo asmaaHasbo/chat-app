@@ -3,13 +3,16 @@ import 'package:flutter/cupertino.dart';
 import 'my_message.dart';
 
 class MessagesListView extends StatelessWidget {
-  MessagesListView({super.key, required this.messageModelList});
+  MessagesListView({super.key, required this.messageModelList , required this.scrollController });
 
   List<MessageModel> messageModelList ;
+  final ScrollController scrollController;
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView(
+        controller: scrollController,
         children: [
           ListView.builder(
             shrinkWrap: true,

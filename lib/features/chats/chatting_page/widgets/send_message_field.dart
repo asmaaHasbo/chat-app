@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/themes/colors.dart';
 import '../../../../core/shared_widgets/circle_avater_icon.dart';
+import 'animted_scrolling_list.dart';
 
 class SendMessageField extends StatelessWidget {
   SendMessageField({
     super.key,
+    required this.scrollController
   });
 
   TextEditingController controller = TextEditingController();
+  final ScrollController scrollController ;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +28,7 @@ class SendMessageField extends StatelessWidget {
               onSubmitted: (value) {
                 addMessage(message: value);
                 controller.clear();
+                animatedScrollingFun(scrollController);
               },
               decoration: InputDecoration(
                   fillColor: Colors.white,
@@ -62,4 +66,6 @@ class SendMessageField extends StatelessWidget {
       ],
     );
   }
+
+
 }
