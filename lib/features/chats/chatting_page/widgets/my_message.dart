@@ -13,6 +13,7 @@ class MyMessage extends StatelessWidget {
     return MessageUi(
       messageModel: messageModel,
       messageBackgroundColor: AppColors.myMessageColor,
+      position:  MainAxisAlignment.start,
       topLeft: const Radius.elliptical(0, 0),
       topRight: const Radius.elliptical(15, 15),
     );

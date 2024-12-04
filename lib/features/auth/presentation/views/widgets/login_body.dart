@@ -15,7 +15,7 @@ class LoginBody extends StatefulWidget {
   State<LoginBody> createState() => _LoginBodyState();
 }
 
-late String gemail;
+ String ? gemail;
 
 class _LoginBodyState extends State<LoginBody> {
   String? password;

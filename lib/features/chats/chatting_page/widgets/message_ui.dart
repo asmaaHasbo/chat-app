@@ -10,18 +10,17 @@ class MessageUi extends StatelessWidget {
     required this.messageBackgroundColor,
     required this.topLeft,
     required this.topRight,
+    required this.position,
   });
   MessageModel messageModel;
-
   Color messageBackgroundColor;
-
   Radius topRight;
   Radius topLeft;
-
+  MainAxisAlignment position  ;
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: position,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),

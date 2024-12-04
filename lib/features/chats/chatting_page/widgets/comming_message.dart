@@ -13,6 +13,7 @@ class CommingMessage extends StatelessWidget {
     return MessageUi(
       messageModel: messageModel,
       messageBackgroundColor: AppColors.commingMessageColor,
+      position:  MainAxisAlignment.end,
       topLeft: const Radius.elliptical(15, 15),
       topRight: const Radius.elliptical(0, 0),
     );
