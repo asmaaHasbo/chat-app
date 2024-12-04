@@ -15,16 +15,15 @@ class LoginBody extends StatefulWidget {
   State<LoginBody> createState() => _LoginBodyState();
 }
 
+late String gemail;
+
 class _LoginBodyState extends State<LoginBody> {
-  String? email;
   String? password;
 
   GlobalKey<FormState> formKey = GlobalKey();
   bool isLoading = false;
   bool isObscured = false;
   bool isVisible = false;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class _LoginBodyState extends State<LoginBody> {
                   const SizedBox(height: 20),
                   CustomTextField(
                     onChange: (value) {
-                      email = value;
+                      gemail = value;
                     },
                     type: TextInputType.emailAddress,
                     hint: 'enter your email',
@@ -77,14 +76,13 @@ class _LoginBodyState extends State<LoginBody> {
                       if (formKey.currentState!.validate()) {
                         isLoading = true;
                         setState(() {});
-                        loginInFunction(context, email, password);
+                        loginInFunction(context, gemail, password);
                         isLoading = false;
                         setState(() {});
                       }
                     },
                     buttName: 'Login',
                   ),
-
                   CustomRow(
                     quText: "Don’t have an account?",
                     linkedText: "Register Now",

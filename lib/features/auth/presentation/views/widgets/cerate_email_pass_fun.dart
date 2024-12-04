@@ -1,3 +1,4 @@
+import 'package:chat_app/features/auth/presentation/views/widgets/register_body.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ import '../../../../firebase/add_users_to_db.dart';
 createEmailPassFun(context, name, phone, email, password) async {
   try {
     await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: email!,
+      email: email,
       password: password!,
     );
     ScaffoldMessenger.of(context).showSnackBar(
@@ -19,7 +20,8 @@ createEmailPassFun(context, name, phone, email, password) async {
     );
     addUser(name: name!, email: email!, phone: phone!);
 
-    Navigator.popAndPushNamed(context, HomeChatPage.id);
+    Navigator.popAndPushNamed(context, HomeChatUsers.id ,
+    );
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
       ScaffoldMessenger.of(context).showSnackBar(snackBar(

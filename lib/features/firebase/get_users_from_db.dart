@@ -7,8 +7,12 @@ import '../../core/shared_widgets/center_circular_indicator.dart';
 import '../chats/home_chat_users/widgets/users_list_view.dart';
 
 class GetUsersFromDb extends StatelessWidget {
-  GetUsersFromDb({super.key});
+  GetUsersFromDb({
+    super.key,
+    // required this.email,
+  });
   CollectionReference users = FirebaseFirestore.instance.collection('users');
+  // String email ;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +27,7 @@ class GetUsersFromDb extends StatelessWidget {
             }
             return UsersListView(
               userModule: userModuleList,
+              // email: email,
             );
           } else if (snapshot.hasError) {
             return const Text('error');

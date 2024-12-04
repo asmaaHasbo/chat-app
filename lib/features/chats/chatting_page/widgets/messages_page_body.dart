@@ -7,9 +7,12 @@ import '../../../../core/shared_widgets/background_img.dart';
 import 'messages_list_view.dart';
 
 class MessagesPageBody extends StatelessWidget {
-  MessagesPageBody({super.key, required this.messageModelList});
+  MessagesPageBody({super.key, required this.messageModelList ,
+    // required this.email,
+  });
 
   List<MessageModel> messageModelList ;
+  // String email ;
   final ScrollController scrollController = ScrollController() ;
 
   @override
@@ -21,7 +24,9 @@ class MessagesPageBody extends StatelessWidget {
         child: Column(
           children: [
             MessagesListView(messageModelList: messageModelList, scrollController: scrollController,),
-            SendMessageField(scrollController:scrollController,),
+            SendMessageField(scrollController:scrollController,
+              // email: email,
+            ),
           ],
         ),
       ),

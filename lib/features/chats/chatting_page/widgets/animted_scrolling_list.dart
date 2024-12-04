@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 void animatedScrollingFun( scrollController) {
   scrollController.animateTo(
-    scrollController.position.maxScrollExtent,
-    duration: const Duration(seconds: 1),
+    0,
+    duration: const Duration(milliseconds: 500),
     curve: Curves.easeIn,
   );
 }

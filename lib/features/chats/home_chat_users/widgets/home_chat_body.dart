@@ -8,14 +8,18 @@ import '../../../../core/shared_widgets/circle_avater_icon.dart';
 import 'num_of_msg.dart';
 
 class HomeChatBody extends StatelessWidget {
-  HomeChatBody({super.key, required this.userModule});
-
+  HomeChatBody({super.key, required this.userModule ,
+    // required this.email,
+  });
+  // String email ;
   UserModule userModule;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, ChattingPage.id);
+        Navigator.pushNamed(context, ChattingPage.id ,
+            // arguments: email,
+        );
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20.0),

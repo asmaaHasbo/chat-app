@@ -13,16 +13,17 @@ import '../../../../../core/shared_widgets/logo.dart';
 class RegisterBody extends StatefulWidget {
   const RegisterBody({super.key});
 
-
   @override
   State<RegisterBody> createState() => _RegisterBodyState();
 }
+
+late String Semail;
 
 class _RegisterBodyState extends State<RegisterBody> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String? name;
-  String? email;
+
   String? phone;
   String? password;
 
@@ -50,7 +51,7 @@ class _RegisterBodyState extends State<RegisterBody> {
                   const SizedBox(height: 20),
                   CustomTextField(
                     onChange: (value) {
-                      email = value;
+                      Semail = value;
                     },
                     type: TextInputType.emailAddress,
                     hint: 'enter your email',
@@ -87,7 +88,7 @@ class _RegisterBodyState extends State<RegisterBody> {
                         isLoading = true;
                         setState(() {});
                         createEmailPassFun(
-                            context, name, phone, email, password);
+                            context, name, phone, Semail, password);
                         setState(() {});
                         isLoading = false;
                         setState(() {});

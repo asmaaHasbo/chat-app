@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'core/themes/colors.dart';
-import 'features/auth/presentation/views/widgets/login_body.dart';
 import 'features/chats/chatting_page/chatting_page.dart';
 import 'features/splash_screen/views/splash_screen.dart';
 
@@ -44,7 +43,7 @@ class ChatApp extends StatelessWidget {
         SplashScreen.id: (context) => const SplashScreen(),
         LoginPage.id: (context) => const LoginPage(),
         RegisterPage.id: (context) => const RegisterPage(),
-        HomeChatPage.id: (context) => const HomeChatPage(),
+        HomeChatUsers.id: (context) => const HomeChatUsers(),
         ChattingPage.id: (context) => const ChattingPage()
       },
       initialRoute: SplashScreen.id,

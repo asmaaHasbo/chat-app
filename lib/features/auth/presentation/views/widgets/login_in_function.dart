@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/shared_widgets/snack_bar.dart';
 
-loginInFunction(context, email, password ) async {
+loginInFunction(context, email, password) async {
   try {
-     await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: email!,
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: email,
       password: password,
     );
     ScaffoldMessenger.of(context).showSnackBar(
@@ -16,7 +16,11 @@ loginInFunction(context, email, password ) async {
         color: Colors.green,
       ),
     );
-    Navigator.popAndPushNamed(context, HomeChatPage.id);
+    Navigator.popAndPushNamed(
+      context,
+      HomeChatUsers.id,
+      // arguments: email,
+    );
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -25,8 +29,7 @@ loginInFunction(context, email, password ) async {
       ScaffoldMessenger.of(context).showSnackBar(snackBar(
           msg: 'Wrong password provided for that user.', color: Colors.red));
     }
-  }
-  catch(e){
+  } catch (e) {
     print(e.toString());
   }
 }

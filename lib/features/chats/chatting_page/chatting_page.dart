@@ -9,6 +9,7 @@ class ChattingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   // String email = ModalRoute.of(context)!.settings.arguments as String ;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -29,7 +30,9 @@ class ChattingPage extends StatelessWidget {
         ],
       ),
       body:
-          GetMessagesFromDB(),
+          GetMessagesFromDB(
+            // email:email ,
+          ),
     );
   }
 }

@@ -14,11 +14,11 @@ class UserInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          userModule!.name,
+          userModule.name,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         Text(
-          userModule!.phone,
+          userModule.phone,
           style: TextStyle(fontSize: 18, color: AppColors.secondaryColor),
         )
       ],

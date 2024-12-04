@@ -9,11 +9,13 @@ import 'animted_scrolling_list.dart';
 class SendMessageField extends StatelessWidget {
   SendMessageField({
     super.key,
-    required this.scrollController
+    required this.scrollController,
+    // required this.email,
   });
 
   TextEditingController controller = TextEditingController();
-  final ScrollController scrollController ;
+  final ScrollController scrollController;
+  // String email;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,10 @@ class SendMessageField extends StatelessWidget {
             child: TextField(
               controller: controller,
               onSubmitted: (value) {
-                addMessage(message: value);
+                addMessage(
+                  message: value,
+                  // email: email!,
+                );
                 controller.clear();
                 animatedScrollingFun(scrollController);
               },
@@ -66,6 +71,4 @@ class SendMessageField extends StatelessWidget {
       ],
     );
   }
-
-
 }

@@ -6,17 +6,21 @@ import 'home_chat_body.dart';
 class UsersListView extends StatelessWidget {
    UsersListView({
     super.key,
-     required this.userModule
+     required this.userModule,
+     // required this.email
   });
-
-  List<UserModule>  userModule ;
+   // String email ;
+   List<UserModule>  userModule ;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return HomeChatBody(userModule:userModule[index] );
+          return HomeChatBody(
+            userModule:userModule[index] ,
+            // email: email,
+          );
         },
         itemCount: userModule.length,
       ),
