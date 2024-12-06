@@ -24,7 +24,6 @@ class MessagesListView extends StatelessWidget {
           return messageModelList[index].id == "asmaa@gmail.com"
               ? MyMessage(messageModel: messageModelList[index])
               : CommingMessage(messageModel: messageModelList[index]);
-
           // MyMessage(messageModel: messageModelList[index]);
         },
       ),

@@ -11,17 +11,15 @@ class HomeChatBody extends StatelessWidget {
   HomeChatBody({
     super.key,
     required this.userModule,
-    // required this.email,
   });
-  // String email ;
   UserModule userModule;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(
-          context, ChattingPage.id,
-          // arguments: email,
+          context,
+          ChattingPage.id,
         );
       },
       child: Padding(
@@ -34,17 +32,13 @@ class HomeChatBody extends StatelessWidget {
                 CircleAvaterIcon(
                   icon: Icons.person,
                   backgroundIconColor: AppColors.secondaryColor,
-                  iconSize: 20,
-                  radius: 20,
+                  iconSize: 25,
+                  radius: 30,
                 ),
                 const SizedBox(width: 20),
-                UserInfo(
-                  userModule: userModule,
-                ),
+                UserInfo(userModule: userModule),
               ],
             ),
-
-            // const Spacer(flex: 1),
             const NumOfMsg()
           ],
         ),

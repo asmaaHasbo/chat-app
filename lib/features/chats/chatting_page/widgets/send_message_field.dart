@@ -1,3 +1,4 @@
+import 'package:chat_app/features/chats/chatting_page/widgets/onpressed_send_msg_fu.dart';
 import 'package:chat_app/features/firebase/add_message_to_db.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,76 +11,56 @@ class SendMessageField extends StatelessWidget {
   SendMessageField({
     super.key,
     required this.scrollController,
-    // required this.email,
   });
+  final ScrollController scrollController;
 
   TextEditingController controller = TextEditingController();
-  final ScrollController scrollController;
-  // String email;
-  late String  message ;
+
+  String ? message ;
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 280,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 2.0),
-            child: TextField(
-              controller: controller,
-              onSubmitted: (value) {
-                addMessage(
-                  message: value,
-                  // email: email!,
-                );
-
-                controller.clear();
-                animatedScrollingFun(scrollController);
-              },
-              decoration: InputDecoration(
-                  fillColor: Colors.white,
-                  filled: true,
-                  hintText: 'Message',
-                  hintStyle: TextStyle(color: AppColors.secondaryColor),
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black12),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black12),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  prefixIcon: const Icon(
-                    Icons.tag_faces_outlined,
-                    size: 27,
-                  ),
-                  prefixIconColor: AppColors.secondaryColor,
-                  suffixIconColor: AppColors.secondaryColor,
-
-
-                  suffixIcon: IconButton(
-                      onPressed: (){
-                        print(message);
-                      },
-                      icon: const Icon(Icons.send),
-                  ),
-
-
-              ),
+    return Padding(
+      padding: const EdgeInsets.only(top: 2.0),
+      child: TextField(
+        controller: controller,
+        onSubmitted: (value) {
+          onPressedSendIcon(value, controller, scrollController);
+        },
+        decoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+            hintText: 'Message',
+            hintStyle: TextStyle(color: AppColors.secondaryColor),
+            border: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(40),
             ),
-          ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.black12),
+              borderRadius: BorderRadius.circular(40),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.black12),
+              borderRadius: BorderRadius.circular(40),
+            ),
+            prefixIcon: const Icon(
+              Icons.tag_faces_outlined,
+              size: 27,
+            ),
+            prefixIconColor: AppColors.secondaryColor,
+            suffixIconColor: AppColors.secondaryColor,
+
+            suffixIcon: IconButton(
+                onPressed: (){
+                  print(controller.text);
+                  onPressedSendIcon(controller.text, controller, scrollController);
+                 },
+                icon: const Icon(Icons.send),
+            ),
+
         ),
-        const SizedBox(width: 10),
-        CircleAvaterIcon(
-          icon: CupertinoIcons.mic_fill,
-          radius: 25,
-          backgroundIconColor: AppColors.backIconColor,
-        )
-      ],
+      ),
     );
   }
 }

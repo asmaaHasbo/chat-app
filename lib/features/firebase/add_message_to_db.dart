@@ -1,19 +1,17 @@
-import 'package:chat_app/features/auth/presentation/views/widgets/login_body.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 CollectionReference messages =
     FirebaseFirestore.instance.collection('messages');
-
+final user = FirebaseAuth.instance.currentUser;
 addMessage({
   required message,
-  // required email,
 }) {
-  // print(email);
   messages.add(
     {
       'message': message,
       'createdAt': DateTime.now(),
-      'id': gemail,
+      'id': user?.email,
     },
   );
 }

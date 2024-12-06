@@ -4,23 +4,18 @@ import 'package:flutter/cupertino.dart';
 import 'home_chat_body.dart';
 
 class UsersListView extends StatelessWidget {
-   UsersListView({
+  UsersListView({
     super.key,
-     required this.userModule,
-     // required this.email
+    required this.userModule,
   });
-   // String email ;
-   List<UserModule>  userModule ;
+  List<UserModule> userModule;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return HomeChatBody(
-            userModule:userModule[index] ,
-            // email: email,
-          );
+          return HomeChatBody(userModule: userModule[index]);
         },
         itemCount: userModule.length,
       ),
