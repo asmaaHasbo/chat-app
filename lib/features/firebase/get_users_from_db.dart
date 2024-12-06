@@ -22,13 +22,6 @@ class GetUsersFromDb extends StatelessWidget {
             for (int i = 0; i < data.length; i++) {
               userModuleList.add(UserModule.fromJson(snapshot.data!.docs[i]));
             }
-
-
-            final user = FirebaseAuth.instance.currentUser;
-            print(user?.email);
-            print(user?.phoneNumber);
-            print(user?.displayName);
-
             return UsersListView(userModule: userModuleList);
           } else if (snapshot.hasError) {
             return const Text('error');

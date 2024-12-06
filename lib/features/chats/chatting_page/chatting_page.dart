@@ -4,18 +4,17 @@ import '../../../core/themes/styles.dart';
 import '../../firebase/get_messages_from_db.dart';
 
 class ChattingPage extends StatelessWidget {
-  const ChattingPage({super.key});
+   ChattingPage({super.key , required this.userName});
   static String id = "MessagesScreen";
 
+  String userName ;
   @override
   Widget build(BuildContext context) {
-   // String email = ModalRoute.of(context)!.settings.arguments as String ;
-   // print(email);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'WhatsUp',
+          userName,
           style: Styles.textStyle18.copyWith(fontSize: 24),
         ),
         shape: const Border(

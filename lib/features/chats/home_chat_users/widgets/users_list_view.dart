@@ -15,7 +15,7 @@ class UsersListView extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return HomeChatBody(userModule: userModule[index]);
+          return HomeChatBody(userModule: userModule[index], userName: userModule[index].name,);
         },
         itemCount: userModule.length,
       ),

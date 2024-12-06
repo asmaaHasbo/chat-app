@@ -11,15 +11,18 @@ class HomeChatBody extends StatelessWidget {
   HomeChatBody({
     super.key,
     required this.userModule,
+    required this.userName
   });
+  String userName;
   UserModule userModule;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
+
+        Navigator.push(
           context,
-          ChattingPage.id,
+          MaterialPageRoute(builder: (context) => ChattingPage(userName: userName,),),
         );
       },
       child: Padding(
@@ -33,7 +36,7 @@ class HomeChatBody extends StatelessWidget {
                   icon: Icons.person,
                   backgroundIconColor: AppColors.secondaryColor,
                   iconSize: 25,
-                  radius: 30,
+                  radius: 25
                 ),
                 const SizedBox(width: 20),
                 UserInfo(userModule: userModule),
