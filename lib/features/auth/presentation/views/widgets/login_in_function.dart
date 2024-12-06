@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/shared_widgets/snack_bar.dart';
 
-loginInFunction(context, email, password) async {
+loginInFunction(context, email, password, theEmail) async {
   try {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: email,
@@ -16,10 +16,18 @@ loginInFunction(context, email, password) async {
         color: Colors.green,
       ),
     );
+    // // print(theEmail);
+    // Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (context) => HomeChatUsers(
+    //         email: 'from login' + theEmail,
+    //       ),
+    //     ));
     Navigator.popAndPushNamed(
       context,
       HomeChatUsers.id,
-      // arguments: email,
+      arguments: theEmail,
     );
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {

@@ -16,7 +16,7 @@ class SendMessageField extends StatelessWidget {
   TextEditingController controller = TextEditingController();
   final ScrollController scrollController;
   // String email;
-
+  late String  message ;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -32,6 +32,7 @@ class SendMessageField extends StatelessWidget {
                   message: value,
                   // email: email!,
                 );
+
                 controller.clear();
                 animatedScrollingFun(scrollController);
               },
@@ -57,8 +58,18 @@ class SendMessageField extends StatelessWidget {
                     size: 27,
                   ),
                   prefixIconColor: AppColors.secondaryColor,
-                  suffixIcon: const Icon(Icons.send),
-                  suffixIconColor: AppColors.secondaryColor),
+                  suffixIconColor: AppColors.secondaryColor,
+
+
+                  suffixIcon: IconButton(
+                      onPressed: (){
+                        print(message);
+                      },
+                      icon: const Icon(Icons.send),
+                  ),
+
+
+              ),
             ),
           ),
         ),

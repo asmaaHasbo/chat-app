@@ -8,7 +8,9 @@ import '../../../../core/shared_widgets/circle_avater_icon.dart';
 import 'num_of_msg.dart';
 
 class HomeChatBody extends StatelessWidget {
-  HomeChatBody({super.key, required this.userModule ,
+  HomeChatBody({
+    super.key,
+    required this.userModule,
     // required this.email,
   });
   // String email ;
@@ -17,25 +19,32 @@ class HomeChatBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, ChattingPage.id ,
-            // arguments: email,
+        Navigator.pushNamed(
+          context, ChattingPage.id,
+          // arguments: email,
         );
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CircleAvaterIcon(
-              icon: Icons.person,
-              backgroundIconColor: AppColors.secondaryColor,
-              iconSize: 40,
-              radius: 30,
+            Row(
+              children: [
+                CircleAvaterIcon(
+                  icon: Icons.person,
+                  backgroundIconColor: AppColors.secondaryColor,
+                  iconSize: 20,
+                  radius: 20,
+                ),
+                const SizedBox(width: 20),
+                UserInfo(
+                  userModule: userModule,
+                ),
+              ],
             ),
-            const SizedBox(width: 20),
-            UserInfo(
-              userModule: userModule,
-            ),
-            const Spacer(flex: 1),
+
+            // const Spacer(flex: 1),
             const NumOfMsg()
           ],
         ),

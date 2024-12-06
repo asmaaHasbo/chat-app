@@ -10,6 +10,7 @@ class ChattingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    // String email = ModalRoute.of(context)!.settings.arguments as String ;
+   // print(email);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -22,7 +23,7 @@ class ChattingPage extends StatelessWidget {
         ),
         toolbarHeight: 70,
         actions: const [
-          Icon(Icons.search_rounded),
+          Icon(Icons.call),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Icon(Icons.menu),

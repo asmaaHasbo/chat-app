@@ -30,13 +30,11 @@ class CustomTextField extends StatelessWidget {
         if (value!.isEmpty) {
           return "Field is required";
         }
-
         // if(type == TextInputType.visiblePassword){
         //   if(value.length < 9 ){
         //     return "password must be 9 num";
         //   }
         // }
-
       },
       keyboardType: type,
       decoration: InputDecoration(

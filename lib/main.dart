@@ -1,6 +1,7 @@
 import 'package:chat_app/features/auth/presentation/views/login_page.dart';
 import 'package:chat_app/features/auth/presentation/views/register_page.dart';
 import 'package:chat_app/features/chats/home_chat_users/home_chat_users.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -43,10 +44,15 @@ class ChatApp extends StatelessWidget {
         SplashScreen.id: (context) => const SplashScreen(),
         LoginPage.id: (context) => const LoginPage(),
         RegisterPage.id: (context) => const RegisterPage(),
-        HomeChatUsers.id: (context) => const HomeChatUsers(),
+        HomeChatUsers.id: (context) =>  HomeChatUsers(),
         ChattingPage.id: (context) => const ChattingPage()
       },
       initialRoute: SplashScreen.id,
     );
   }
+
+
+
 }
+
+

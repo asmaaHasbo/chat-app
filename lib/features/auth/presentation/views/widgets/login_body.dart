@@ -25,6 +25,8 @@ class _LoginBodyState extends State<LoginBody> {
   bool isObscured = false;
   bool isVisible = false;
 
+  String ? theEmail ;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,6 +49,7 @@ class _LoginBodyState extends State<LoginBody> {
                   CustomTextField(
                     onChange: (value) {
                       gemail = value;
+                      theEmail = value ;
                     },
                     type: TextInputType.emailAddress,
                     hint: 'enter your email',
@@ -76,7 +79,7 @@ class _LoginBodyState extends State<LoginBody> {
                       if (formKey.currentState!.validate()) {
                         isLoading = true;
                         setState(() {});
-                        loginInFunction(context, gemail, password);
+                        loginInFunction(context, gemail ,password,theEmail,);
                         isLoading = false;
                         setState(() {});
                       }

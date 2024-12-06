@@ -21,7 +21,7 @@ class MessagesListView extends StatelessWidget {
         reverse: true,
         itemCount: messageModelList.length,
         itemBuilder: (BuildContext context, int index) {
-          return messageModelList[index].id == gemail
+          return messageModelList[index].id == "asmaa@gmail.com"
               ? MyMessage(messageModel: messageModelList[index])
               : CommingMessage(messageModel: messageModelList[index]);
 
