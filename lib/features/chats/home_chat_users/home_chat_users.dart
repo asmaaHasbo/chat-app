@@ -1,4 +1,5 @@
 import 'package:chat_app/features/chats/home_chat_users/widgets/bottom_navigation.dart';
+import 'package:chat_app/features/chats/home_chat_users/widgets/floating_icon_press.dart';
 import 'package:chat_app/features/firebase/get_users_from_db.dart';
 
 import 'package:flutter/material.dart';
@@ -31,7 +32,16 @@ class HomeChatUsers extends StatelessWidget {
         ],
       ),
       // drawer: Drawer(),
-      body: GetUsersFromDb(),
+      body: GetUsersFromDb(showNumMsg: true,),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context) => const FloatingIconPress(),));
+        },
+        child: const Icon(Icons.chat),
+      ),
+
       bottomNavigationBar: const BottomNavigation(),
     );
   }

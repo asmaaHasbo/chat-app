@@ -7,7 +7,10 @@ class UsersListView extends StatelessWidget {
   UsersListView({
     super.key,
     required this.userModule,
+    required this.showNumMsg,
   });
+  bool  showNumMsg   ;
+
   List<UserModule> userModule;
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,8 @@ class UsersListView extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return HomeChatBody(userModule: userModule[index], userName: userModule[index].name,);
+          return HomeChatBody(userModule: userModule[index],
+            userName: userModule[index].name, showNumMsg: showNumMsg,);
         },
         itemCount: userModule.length,
       ),
