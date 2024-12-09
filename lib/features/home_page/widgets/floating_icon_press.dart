@@ -8,7 +8,15 @@ class FloatingIconPress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Users' , style: Styles.textStyle30,)),
+      appBar: AppBar(
+        title: Text(
+          'Users',
+          style: Styles.textStyle30,
+        ),
+        shape: const Border(
+          bottom: BorderSide(color: Colors.black12, width: 1),
+        ),
+      ),
       body: GetUsersFromDb(showNumMsg: false),
     );
   }

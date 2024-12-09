@@ -1,4 +1,5 @@
 import 'package:chat_app/features/firebase/add_message_to_db.dart';
+import 'package:chat_app/features/home_page/widgets/app_bar_actions.dart';
 import 'package:chat_app/features/home_page/widgets/bottom_navigation.dart';
 import 'package:chat_app/features/home_page/widgets/floating_butting.dart';
 import 'package:chat_app/features/user_profile/user_profile.dart';
@@ -44,22 +45,7 @@ class _HomePageState extends State<HomePage> {
           bottom: BorderSide(color: Colors.black12, width: 1),
         ),
         toolbarHeight: 70,
-        actions: [
-          const Icon(Icons.search_rounded),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Builder(
-              builder: (context) {
-                return IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                );
-              },
-            ),
-          ),
-        ],
+        actions: appBarActions(context)
       ),
       drawer: const Drawer(),
       body: screens[currentIndex],
