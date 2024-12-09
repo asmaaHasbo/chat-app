@@ -1,8 +1,9 @@
 import 'package:chat_app/features/user_status/widgets/status_list_tile.dart';
 import 'package:flutter/cupertino.dart';
 
-class UserStauts extends StatelessWidget {
-  const UserStauts({super.key});
+class UserStatus extends StatelessWidget {
+  const UserStatus({super.key});
+ static bool isShow = false;
 
   @override
   Widget build(BuildContext context) {

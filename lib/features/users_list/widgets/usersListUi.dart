@@ -1,23 +1,24 @@
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
-import 'package:chat_app/features/chats/home_chat_users/widgets/addingNumMsg.dart';
-import 'package:chat_app/features/chats/home_chat_users/widgets/user_info.dart';
+import 'package:chat_app/features/users_list/widgets/showingNumMsg.dart';
+import 'package:chat_app/features/users_list/widgets/user_info.dart';
 import 'package:flutter/material.dart';
 
 import '../../chatting_page/chatting_page.dart';
 import '../../../../core/shared_widgets/circle_avater_icon.dart';
 
-class HomeChatBody extends StatelessWidget {
-  HomeChatBody({
+class usersListUi extends StatelessWidget {
+  usersListUi({
     super.key,
     required this.userModule,
-    required this.userName,
+    required this.myFriendName,
+    required this.myFriendEmail,
     required this.showNumMsg,
-
   });
-  String userName;
+  String myFriendName;
+  String myFriendEmail;
   UserModule userModule;
-   bool  showNumMsg   ;
+  bool showNumMsg;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,12 @@ class HomeChatBody extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ChattingPage(userName: userName,),),
+          MaterialPageRoute(
+            builder: (context) => ChattingPage(
+              myFriendName: myFriendName,
+              myFriendEmail: myFriendEmail,
+            ),
+          ),
         );
       },
       child: Padding(
@@ -36,16 +42,15 @@ class HomeChatBody extends StatelessWidget {
             Row(
               children: [
                 CircleAvaterIcon(
-                  icon: Icons.person,
-                  backgroundIconColor: AppColors.secondaryColor,
-                  iconSize: 25,
-                  radius: 25
-                ),
+                    icon: Icons.person,
+                    backgroundIconColor: AppColors.secondaryColor,
+                    iconSize: 30,
+                    radius: 25),
                 const SizedBox(width: 20),
                 UserInfo(userModule: userModule),
               ],
             ),
-             showingNumWidget(showNumMsg)
+            showingNumOfMsgUi(showNumMsg)
           ],
         ),
       ),

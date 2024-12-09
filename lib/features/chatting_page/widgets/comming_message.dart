@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../../../core/themes/colors.dart';
-import '../../../auth/presentation/view_model/message_model.dart';
+import '../../auth/presentation/view_model/message_model.dart';
 import 'message_ui.dart';
 
 class CommingMessage extends StatelessWidget {

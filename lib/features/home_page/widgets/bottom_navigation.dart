@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/themes/colors.dart';
+import '../../../core/themes/colors.dart';
 
 class BottomNavigation extends StatelessWidget {
-  const BottomNavigation({super.key});
-
+  BottomNavigation({super.key ,
+    required this.currentIndex,
+    required this.onTap
+  });
+  int currentIndex ;
+   Function(int) onTap ;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
+      items:  const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.chat),
           label: 'Chats',
@@ -22,9 +26,9 @@ class BottomNavigation extends StatelessWidget {
           label: 'Calls',
         ),
       ],
-      currentIndex: 0,
+      currentIndex: currentIndex ,
       selectedItemColor: AppColors.mainColor,
-      // onTap: _onItemTapped,
+      onTap: onTap  ,
     );
   }
 }

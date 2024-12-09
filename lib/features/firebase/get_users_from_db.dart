@@ -1,11 +1,10 @@
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/shared_widgets/center_circular_indicator.dart';
-import '../chats/home_chat_users/widgets/users_list_view.dart';
+import '../users_list/widgets/users_list_view.dart';
 
 class GetUsersFromDb extends StatelessWidget {
   GetUsersFromDb({super.key , required this.showNumMsg});

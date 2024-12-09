@@ -1,12 +1,10 @@
-
-
-
-import '../../../firebase/add_message_to_db.dart';
+import '../../firebase/add_message_to_db.dart';
 import 'animted_scrolling_list.dart';
 
- onPressedSendIcon( msg , controller , scrollController ){
+ onPressedSendIcon(myFriendEmail ,  msg , controller , scrollController ){
   if(msg.isNotEmpty ){
     addMessage(
+      myFriendEmail: myFriendEmail,
       message:msg,
     );
     controller.clear();

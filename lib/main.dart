@@ -1,12 +1,11 @@
 import 'package:chat_app/features/auth/presentation/views/login_page.dart';
 import 'package:chat_app/features/auth/presentation/views/register_page.dart';
-import 'package:chat_app/features/chats/home_chat_users/home_chat_users.dart';
+import 'package:chat_app/features/home_page/home_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'core/themes/colors.dart';
-import 'features/chats/chatting_page/chatting_page.dart';
 import 'features/splash_screen/views/splash_screen.dart';
 
 void main() async {
@@ -43,7 +42,7 @@ class ChatApp extends StatelessWidget {
         SplashScreen.id: (context) => const SplashScreen(),
         LoginPage.id: (context) => const LoginPage(),
         RegisterPage.id: (context) => const RegisterPage(),
-        HomeChatUsers.id: (context) => const HomeChatUsers(),
+        HomePage.id: (context) => HomePage(),
         // ChattingPage.id: (context) => const ChattingPage(),
       },
       initialRoute: SplashScreen.id,

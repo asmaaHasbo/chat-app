@@ -7,20 +7,20 @@ class NumOfMsg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        const Text(
+        Text(
           '12:30 pm',
           style: TextStyle(
             fontSize: 16,
           ),
         ),
-        const SizedBox(height: 5),
+        SizedBox(height: 5),
         CircleAvatar(
           minRadius: 15,
           backgroundColor: AppColors.mainColor,
-          child: const Text(
+          child: Text(
             '2',
             style: TextStyle(
               color: Colors.white,

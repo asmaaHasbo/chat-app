@@ -1,7 +1,7 @@
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'home_chat_body.dart';
+import 'usersListUi.dart';
 
 class UsersListView extends StatelessWidget {
   UsersListView({
@@ -9,7 +9,7 @@ class UsersListView extends StatelessWidget {
     required this.userModule,
     required this.showNumMsg,
   });
-  bool  showNumMsg   ;
+  bool showNumMsg;
 
   List<UserModule> userModule;
   @override
@@ -18,8 +18,12 @@ class UsersListView extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return HomeChatBody(userModule: userModule[index],
-            userName: userModule[index].name, showNumMsg: showNumMsg,);
+          return usersListUi(
+            userModule: userModule[index],
+            myFriendName: userModule[index].name,
+            myFriendEmail: userModule[index].email,
+            showNumMsg: showNumMsg,
+          );
         },
         itemCount: userModule.length,
       ),

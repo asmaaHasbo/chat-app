@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/themes/styles.dart';
-import '../../firebase/get_messages_from_db.dart';
+import '../firebase/get_messages_from_db.dart';
 
 class ChattingPage extends StatelessWidget {
-   ChattingPage({super.key , required this.userName});
+  ChattingPage({
+    super.key,
+    required this.myFriendName,
+    required this.myFriendEmail,
+  });
   static String id = "MessagesScreen";
 
-  String userName ;
+  String myFriendName;
+  String myFriendEmail;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          userName,
+          myFriendName,
           style: Styles.textStyle18.copyWith(fontSize: 24),
         ),
         shape: const Border(
@@ -29,14 +34,9 @@ class ChattingPage extends StatelessWidget {
           ),
         ],
       ),
-      body:
-          GetMessagesFromDB(
-            // email:email ,
-          ),
+      body: GetMessagesFromDB(
+        myFriendEmail: myFriendEmail,
+      ),
     );
   }
 }
-
-
-
-

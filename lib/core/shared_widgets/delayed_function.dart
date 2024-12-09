@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 
 void navigateToMainScreen(context) {
-  Future.delayed(const Duration(seconds: 8), () {
+  Future.delayed(const Duration(seconds: 5), () {
     Navigator.pushNamed(context, LoginPage.id);
   });
 }
