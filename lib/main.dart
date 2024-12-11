@@ -44,7 +44,7 @@ class ChatApp extends StatelessWidget {
         LoginPage.id: (context) => const LoginPage(),
         RegisterPage.id: (context) => const RegisterPage(),
         HomePage.id: (context) => const HomePage(),
-        SearchScreen.id : (context) =>  SearchScreen(),
+        SearchScreen.id: (context) => const SearchScreen(),
         // ChattingPage.id: (context) => const ChattingPage(),
       },
       initialRoute: SplashScreen.id,

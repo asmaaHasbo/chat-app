@@ -5,7 +5,7 @@ import 'package:chat_app/features/auth/presentation/views/widgets/custom_row.dar
 import 'package:chat_app/features/auth/presentation/views/widgets/login_in_function.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/login_title.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/shared_widgets/logo.dart';
+import 'package:chat_app/core/shared_widgets/logo.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});

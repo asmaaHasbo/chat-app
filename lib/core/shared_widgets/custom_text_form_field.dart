@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
     required this.prefixIcon,
     this.suffixIcon,
     this.suffixIconPress,
-  }  );
+  });
 
   Function(String) onChange;
   String hint;
@@ -21,7 +21,6 @@ class CustomTextField extends StatelessWidget {
   IconData? suffixIcon;
   VoidCallback? suffixIconPress;
 
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -30,11 +29,6 @@ class CustomTextField extends StatelessWidget {
         if (value!.isEmpty) {
           return "Field is required";
         }
-        // if(type == TextInputType.visiblePassword){
-        //   if(value.length < 9 ){
-        //     return "password must be 9 num";
-        //   }
-        // }
       },
       keyboardType: type,
       decoration: InputDecoration(
@@ -55,17 +49,14 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(6),
           borderSide: const BorderSide(color: Color(0xff34B7F1), width: 2),
         ),
-
         prefixIcon: Icon(
           prefixIcon,
           color: Colors.black54,
         ),
-
         suffixIcon: IconButton(
-          onPressed:suffixIconPress,
-          icon:Icon(suffixIcon)   ,
+          onPressed: suffixIconPress,
+          icon: Icon(suffixIcon),
         ),
-
       ),
     );
   }

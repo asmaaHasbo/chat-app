@@ -1,5 +1,4 @@
 // ignore_for_file: must_be_immutable
-
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +24,8 @@ class CustomButton extends StatelessWidget {
       ),
       child: Text(
         buttName,
-        style: const TextStyle(fontSize: 21,fontWeight: FontWeight.bold ,color: Colors.white),
+        style: const TextStyle(
+            fontSize: 21, fontWeight: FontWeight.bold, color: Colors.white),
       ),
     );
   }

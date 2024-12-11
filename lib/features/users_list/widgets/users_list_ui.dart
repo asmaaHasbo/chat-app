@@ -1,14 +1,13 @@
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
-import 'package:chat_app/features/users_list/widgets/showingNumMsg.dart';
+import 'package:chat_app/features/users_list/widgets/showing_num_of_msg.dart';
 import 'package:chat_app/features/users_list/widgets/user_info.dart';
 import 'package:flutter/material.dart';
+import 'package:chat_app/features/chatting_page/chatting_page.dart';
+import 'package:chat_app/core/shared_widgets/circle_avater_icon.dart';
 
-import '../../chatting_page/chatting_page.dart';
-import '../../../../core/shared_widgets/circle_avater_icon.dart';
-
-class usersListUi extends StatelessWidget {
-  usersListUi({
+class UsersListUi extends StatelessWidget {
+  UsersListUi({
     super.key,
     required this.userModule,
     required this.showNumMsg,

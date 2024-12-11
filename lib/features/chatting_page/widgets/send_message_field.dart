@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/themes/colors.dart';
+import 'package:chat_app/core/themes/colors.dart';
 import 'onpressed_send_msg_fu.dart';
 
 class SendMessageField extends StatelessWidget {

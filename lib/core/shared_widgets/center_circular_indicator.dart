@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../themes/colors.dart';
+import 'package:chat_app/core/themes/colors.dart';
 
 class CenterCircularIndicator extends StatelessWidget {
   const CenterCircularIndicator({
@@ -9,7 +8,7 @@ class CenterCircularIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
         child: CircularProgressIndicator(
       color: AppColors.mainColor,
     ));

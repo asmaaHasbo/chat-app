@@ -3,18 +3,18 @@ import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/features/auth/presentation/view_model/message_model.dart';
 import 'message_ui.dart';
 
-class MyMessage extends StatelessWidget {
-  MyMessage({super.key, required this.messageModel});
+class ComingMessage extends StatelessWidget {
+  ComingMessage({super.key, required this.messageModel});
   MessageModel messageModel;
 
   @override
   Widget build(BuildContext context) {
     return MessageUi(
       messageModel: messageModel,
-      messageBackgroundColor: AppColors.myMessageColor,
-      position: MainAxisAlignment.start,
-      topLeft: const Radius.elliptical(0, 0),
-      topRight: const Radius.elliptical(15, 15),
+      messageBackgroundColor: AppColors.comingMessageColor,
+      position: MainAxisAlignment.end,
+      topLeft: const Radius.elliptical(15, 15),
+      topRight: const Radius.elliptical(0, 0),
     );
   }
 }

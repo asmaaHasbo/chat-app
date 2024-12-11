@@ -1,9 +1,8 @@
 import 'package:chat_app/features/home_page/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../core/shared_widgets/snack_bar.dart';
-import '../../../../firebase/add_users_to_db.dart';
+import 'package:chat_app/core/shared_widgets/snack_bar.dart';
+import 'package:chat_app/features/firebase/add_users_to_db.dart';
 
 createEmailPassFun(context, name, phone, email, password) async {
   try {

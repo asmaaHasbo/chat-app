@@ -23,6 +23,6 @@ class SplashBody extends StatelessWidget {
           const DescriptionText(),
         ],
       ),
-    ) ;
+    );
   }
 }

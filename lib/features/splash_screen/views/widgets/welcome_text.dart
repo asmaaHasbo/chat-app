@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import '../../../../core/themes/styles.dart';
+import 'package:chat_app/core/themes/styles.dart';
 
 class WelcomeText extends StatelessWidget {
   const WelcomeText({super.key});

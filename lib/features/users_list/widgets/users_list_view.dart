@@ -1,7 +1,7 @@
 import 'package:chat_app/features/auth/presentation/view_model/user_modle.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'usersListUi.dart';
+import 'users_list_ui.dart';
 
 class UsersListView extends StatelessWidget {
   UsersListView({
@@ -18,7 +18,7 @@ class UsersListView extends StatelessWidget {
       padding: const EdgeInsets.only(top: 16.0 , left: 16 , right: 16),
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return usersListUi(
+          return UsersListUi(
             userModule: userModule[index],
             // myFriendName: userModule[index].name,
             // myFriendEmail: userModule[index].email,

@@ -3,7 +3,7 @@ import 'package:chat_app/features/search/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {
-  SearchScreen({super.key});
+  const SearchScreen({super.key});
   static String id = "searchScreen";
 
   @override
@@ -11,7 +11,7 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  String? searchInput ="";
+  String? searchInput = "";
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +30,7 @@ class _SearchScreenState extends State<SearchScreen> {
           child: searchTextField(
             (value) {
               searchInput = value;
-              setState(() {
-
-              });
+              setState(() {});
             },
           ),
         ),

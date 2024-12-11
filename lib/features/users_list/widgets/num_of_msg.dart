@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/themes/colors.dart';
+import 'package:chat_app/core/themes/colors.dart';
 
 class NumOfMsg extends StatelessWidget {
   const NumOfMsg({super.key});

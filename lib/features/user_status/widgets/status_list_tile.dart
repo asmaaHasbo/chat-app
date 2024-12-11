@@ -1,4 +1,3 @@
-import 'package:chat_app/core/constants/assests_images.dart';
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'package:chat_app/features/search/search_screen.dart';
 import 'package:flutter/material.dart';
 
-List<Widget> appBarActions (context){
+List<Widget> appBarActions(context) {
   return [
     IconButton(
       onPressed: () {
@@ -25,7 +25,3 @@ List<Widget> appBarActions (context){
     ),
   ];
 }
-
-
-
-

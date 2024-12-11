@@ -1,7 +1,7 @@
 import 'package:chat_app/features/home_page/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/shared_widgets/snack_bar.dart';
+import 'package:chat_app/core/shared_widgets/snack_bar.dart';
 
 loginInFunction(context, email, password) async {
   try {

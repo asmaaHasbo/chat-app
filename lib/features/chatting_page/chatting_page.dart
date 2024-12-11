@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../core/themes/styles.dart';
-import '../firebase/get_messages_from_db.dart';
+import 'package:chat_app/core/themes/styles.dart';
+import 'package:chat_app/features/firebase/get_messages_from_db.dart';
 
 class ChattingPage extends StatelessWidget {
   ChattingPage({

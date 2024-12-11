@@ -1,7 +1,7 @@
 import 'package:chat_app/features/auth/presentation/view_model/message_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'comming_message.dart';
+import 'coming_message.dart';
 import 'my_message.dart';
 
 class MessagesListView extends StatelessWidget {
@@ -26,7 +26,7 @@ class MessagesListView extends StatelessWidget {
           if (allMessagesInDb[index].id == user?.email) {
             return MyMessage(messageModel: allMessagesInDb[index]);
           } else {
-            return CommingMessage(messageModel: allMessagesInDb[index]);
+            return ComingMessage(messageModel: allMessagesInDb[index]);
           }
         },
       ),

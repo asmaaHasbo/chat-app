@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:chat_app/core/shared_widgets/custom_text_form_field.dart';
 
-import '../../../../../core/shared_widgets/custom_text_form_field.dart';
 class PasswordField extends StatefulWidget {
-   PasswordField({super.key , this.password});
-   String ? password ;
+  PasswordField({super.key, this.password});
+  String? password;
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
 }
 
 class _PasswordFieldState extends State<PasswordField> {
-   bool isVisible = false ;
+  bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +22,12 @@ class _PasswordFieldState extends State<PasswordField> {
       hint: 'enter your password',
       label: 'enter your password',
       prefixIcon: Icons.lock,
-
-      suffixIconPress: (){
+      suffixIconPress: () {
         isVisible = !isVisible;
-        setState(() {
-        });
-        print(isVisible);
+        setState(() {});
       },
-      suffixIcon: isVisible ? Icons.visibility_outlined : Icons.visibility_off_outlined ,
+      suffixIcon:
+          isVisible ? Icons.visibility_outlined : Icons.visibility_off_outlined,
     );
   }
 }

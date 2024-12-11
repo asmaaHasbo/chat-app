@@ -4,10 +4,9 @@ import 'package:chat_app/features/auth/presentation/views/widgets/login_title.da
 import 'package:chat_app/features/auth/presentation/views/widgets/phone_field.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/user_name_field.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../core/shared_widgets/custom_button.dart';
-import '../../../../../core/shared_widgets/custom_text_form_field.dart';
-import '../../../../../core/shared_widgets/logo.dart';
+import 'package:chat_app/core/shared_widgets/custom_button.dart';
+import 'package:chat_app/core/shared_widgets/custom_text_form_field.dart';
+import 'package:chat_app/core/shared_widgets/logo.dart';
 
 class RegisterBody extends StatefulWidget {
   const RegisterBody({super.key});

@@ -1,7 +1,7 @@
 import 'package:chat_app/core/shared_widgets/convert_timestamp_to_date_time.dart';
 import 'package:chat_app/features/auth/presentation/view_model/message_model.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/themes/colors.dart';
+import 'package:chat_app/core/themes/colors.dart';
 
 class MessageUi extends StatelessWidget {
   MessageUi({
@@ -16,7 +16,7 @@ class MessageUi extends StatelessWidget {
   Color messageBackgroundColor;
   Radius topRight;
   Radius topLeft;
-  MainAxisAlignment position  ;
+  MainAxisAlignment position;
   @override
   Widget build(BuildContext context) {
     return Row(
