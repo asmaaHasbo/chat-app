@@ -20,8 +20,8 @@ class UsersListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return usersListUi(
             userModule: userModule[index],
-            myFriendName: userModule[index].name,
-            myFriendEmail: userModule[index].email,
+            // myFriendName: userModule[index].name,
+            // myFriendEmail: userModule[index].email,
             showNumMsg: showNumMsg,
           );
         },

@@ -11,12 +11,8 @@ class usersListUi extends StatelessWidget {
   usersListUi({
     super.key,
     required this.userModule,
-    required this.myFriendName,
-    required this.myFriendEmail,
     required this.showNumMsg,
   });
-  String myFriendName;
-  String myFriendEmail;
   UserModule userModule;
   bool showNumMsg;
 
@@ -28,8 +24,8 @@ class usersListUi extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => ChattingPage(
-              myFriendName: myFriendName,
-              myFriendEmail: myFriendEmail,
+              myFriendName: userModule.name,
+              myFriendEmail: userModule.email,
             ),
           ),
         );

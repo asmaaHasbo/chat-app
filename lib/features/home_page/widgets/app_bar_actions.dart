@@ -5,7 +5,8 @@ List<Widget> appBarActions (context){
   return [
     IconButton(
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder:(context) => const SearchScreen()));
+        Navigator.pushNamed(context, SearchScreen.id);
+        // Navigator.push(context, MaterialPageRoute(builder:(context) => const SearchScreen()));
       },
       icon: const Icon(Icons.search_rounded),
     ),

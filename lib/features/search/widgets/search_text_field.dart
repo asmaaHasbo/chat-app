@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget searchTextField (){
+Widget searchTextField (  Function(String) onChange ){
  return TextField(
+   onChanged: onChange ,
    decoration: InputDecoration(
      hintText: 'search...',
      border: OutlineInputBorder(
