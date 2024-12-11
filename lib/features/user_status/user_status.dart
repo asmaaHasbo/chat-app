@@ -8,7 +8,7 @@ class UserStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: 15,
       itemBuilder: (context, index) => const StatusListTile(),
 
     );
