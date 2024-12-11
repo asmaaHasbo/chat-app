@@ -34,30 +34,32 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(
-          'WhatsUp',
-          style: Styles.textStyle18.copyWith(fontSize: 24),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(
+            'WhatsUp',
+            style: Styles.textStyle18.copyWith(fontSize: 24),
+          ),
+          shape: const Border(
+            bottom: BorderSide(color: Colors.black12, width: 1),
+          ),
+          toolbarHeight: 70,
+          actions: appBarActions(context)
         ),
-        shape: const Border(
-          bottom: BorderSide(color: Colors.black12, width: 1),
+        drawer: const Drawer(),
+        body: screens[currentIndex],
+        floatingActionButton:
+            isShowList[currentIndex] ? floatingButton(context) : null,
+        bottomNavigationBar: BottomNavigation(
+          currentIndex: currentIndex,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
         ),
-        toolbarHeight: 70,
-        actions: appBarActions(context)
-      ),
-      drawer: const Drawer(),
-      body: screens[currentIndex],
-      floatingActionButton:
-          isShowList[currentIndex] ? floatingButton(context) : null,
-      bottomNavigationBar: BottomNavigation(
-        currentIndex: currentIndex,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
       ),
     );
   }

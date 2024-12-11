@@ -8,15 +8,13 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: ModalProgressHUD(
-        inAsyncCall: false,
-        progressIndicator: CircularProgressIndicator(
-          color: Colors.red,
-        ),
-        child: Scaffold(
-          body: LoginBody(),
-        ),
+    return const ModalProgressHUD(
+      inAsyncCall: false,
+      progressIndicator: CircularProgressIndicator(
+        color: Colors.red,
+      ),
+      child: Scaffold(
+        body: LoginBody(),
       ),
     );
   }

@@ -7,10 +7,10 @@ class UserStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        StatusListTile()
-      ],
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) => const StatusListTile(),
+
     );
   }
 }

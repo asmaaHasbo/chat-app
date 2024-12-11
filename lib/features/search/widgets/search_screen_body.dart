@@ -24,7 +24,7 @@ class SearchScreenBody extends StatelessWidget {
                     .add(UserModule.fromJson(snapshots.data!.docs[i]));
               }
 
-              if (snapshots.data!.docs[i]['name']
+            else if (snapshots.data!.docs[i]['name']
                   .toString()
                   .toLowerCase()
                   .startsWith(searchInput.toLowerCase())) {
