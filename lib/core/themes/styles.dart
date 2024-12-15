@@ -8,7 +8,6 @@ abstract class Styles {
     color: AppColors.mainColor,
     fontWeight: FontWeight.w900,
   );
-
   static TextStyle textStyle22 = const TextStyle(
     fontSize: 22,
     color: Colors.black,
